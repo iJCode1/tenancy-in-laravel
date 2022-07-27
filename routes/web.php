@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+// Solicitada para quitar el error
+use Illuminate\Support\Facades\Auth;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +24,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Forma 2 de crear las rutas de los inquilinos
+// $domain = sprintf("%s.%s", "{account}", env("APP_DOMAIN"));
+// Route::domain($domain)->group(function (){
+//     Route::get('users/{id}', function ($account, $id){
+//         dd($account);
+//     });
+// });
