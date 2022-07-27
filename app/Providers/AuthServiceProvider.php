@@ -25,6 +25,9 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        // Autenticando a los inquilinos o usuarios de un inquilino
+        if(app(\Hyn\Tenancy\Environment::class)->hostname()){
+            auth()->getProvider()->setModel(\App\Models\Tenant\User::class);
+        }
     }
 }
