@@ -7,6 +7,7 @@ Route::middleware(['web'])
   ->as('tenant.')
   ->group(function(){
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/homeInquilino', 'HomeController@homeInquilino')->name('homeInquilino');
     Route::get('/products', function(){
       dd(\App\Models\Tenant\Product::all());
     });
